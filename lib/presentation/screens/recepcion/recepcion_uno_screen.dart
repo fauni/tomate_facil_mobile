@@ -1,12 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:tomate_facil/presentation/widgets/side_menu.dart';
 
 class RecepcionUnoScreen extends StatelessWidget {
   const RecepcionUnoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Recepcion 1'),
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: AppBar(
+        title: const Text('Recepción (Compras)'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications, color: Colors.amber,),
+            onPressed: (){}, 
+          ),
+          IconButton(
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: (){}, 
+          )
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Documento base',
+                prefixIcon: Icon(Icons.description),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Fecha de Doc',
+                prefixIcon: Icon(Icons.calendar_today),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Cod. de cliente',
+                prefixIcon: Icon(Icons.person),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Cod. de item',
+                prefixIcon: Icon(Icons.inventory),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Almacén',
+                prefixIcon: Icon(Icons.store),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Scan'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Buscar'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      // drawer: SideMenu(scaffoldKey: scaffoldKey,),
     );
   }
 }
