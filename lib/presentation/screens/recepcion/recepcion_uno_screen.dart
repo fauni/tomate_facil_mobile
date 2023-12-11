@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tomate_facil/presentation/widgets/side_menu.dart';
+import 'package:go_router/go_router.dart';
 
 class RecepcionUnoScreen extends StatelessWidget {
   const RecepcionUnoScreen({super.key});
@@ -13,12 +13,10 @@ class RecepcionUnoScreen extends StatelessWidget {
         title: const Text('Recepción (Compras)'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications, color: Colors.amber,),
-            onPressed: (){}, 
-          ),
-          IconButton(
-            icon: const Icon(Icons.exit_to_app),
-            onPressed: (){}, 
+            icon: const Icon(Icons.switch_camera_rounded),
+            onPressed: () {
+              context.push('/recepcion_dos');
+            },
           )
         ],
       ),
