@@ -39,7 +39,9 @@ class _SideMenuState extends State<SideMenu> {
           child: const Text('Menu Principal'),
         ),
 
-        ...appMenuItems.map((item) => NavigationDrawerDestination(
+        ...appMenuItems
+        .sublist(0,8)
+        .map((item) => NavigationDrawerDestination(
           icon: Icon(item.icon), 
           label: Text(item.title)
           )
@@ -48,7 +50,15 @@ class _SideMenuState extends State<SideMenu> {
         const Padding(
           padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
           child: Divider(),
-        )
+        ),
+
+        ...appMenuItems
+        .sublist(8,9)
+        .map((item) => NavigationDrawerDestination(
+          icon: Icon(item.icon), 
+          label: Text(item.title)
+          )
+        ),
       ]
     );
   }
